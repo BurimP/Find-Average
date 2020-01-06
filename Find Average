@@ -1,0 +1,45 @@
+//Program for calculating the average grade of the students
+//29.03.2018
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int n,m, grades=0, temp, student=1;
+    float sum=0, avg=0, avgClass=0, Ssum=0, avgSum=0;      //variables
+    cout<<"Type the number of students: ";
+    cin>>n;                                     //number of students
+    cout<<endl;
+    cout<<"Type the number of subjects: ";
+    cin>>m;
+    cout<<endl<<endl;
+    temp=m;
+    for(int i=0;i<n;i++)                        //'for' for counting students
+    {
+        cout<<"Type the grades for student "<<student<<endl;
+        cout<<endl;
+        cout<<"Student "<<student<<":"<<endl;;
+        for(int i=0;i<m;i++)                        //'for' for counting subjects
+        {
+            cin>>grades;                            //enter grades
+            sum+=grades;                          //sum of grades
+        }
+        cout<<endl;
+        Ssum+=sum;
+        float tmp=sum;
+        sum=0;
+        avg=tmp/temp;
+        cout<<"Average grade of the student "<<student<<" is: "<<setprecision(3)<<avg<<endl;     //average grade of each student
+        cout<<endl;
+        student++;
+        avgSum+=avg;
+    }
+    avgClass=avgSum/n;
+    cout<<"Average grade of the class is: "<<setprecision(3)<<avgClass;      //average grade of the class
+    cout<<endl;
+
+    return 0;
+}
